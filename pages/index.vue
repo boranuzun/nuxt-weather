@@ -36,7 +36,7 @@ const fetchGeocodes = async () => {
       >
         <li
           v-for="searchResult in searchResults"
-          :key="searchResult.admin1_id"
+          :key="searchResult.id"
           class="py-2 px-2 cursor-pointer hover:bg-weather-secondary"
         >
           <span v-if="searchResult.admin1">
