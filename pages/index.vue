@@ -30,6 +30,24 @@ const fetchGeocodes = async () => {
         placeholder="Search for a city or state"
         class="py-2 px-1 w-full bg-transparent border-b focus:border-weather-primary focus:outline-none focus:shadow-[0px_1px_0_0_#004E71]"
       />
+      <ul
+        class="absolute bg-weather-primary text-white w-full shadow-md py-2 px-1 top-[66px]"
+        v-if="searchResults"
+      >
+        <li
+          v-for="searchResult in searchResults"
+          :key="searchResult.admin1_id"
+          class="py-2 px-2 cursor-pointer hover:bg-weather-secondary"
+        >
+          <span v-if="searchResult.admin1">
+            {{ searchResult.name }}, {{ searchResult.admin1 }},
+            {{ searchResult.country }}
+          </span>
+          <span v-else>
+            {{ searchResult.name }}, {{ searchResult.country }}
+          </span>
+        </li>
+      </ul>
     </div>
   </main>
 </template>
