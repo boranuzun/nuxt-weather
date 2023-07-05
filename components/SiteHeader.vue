@@ -8,7 +8,7 @@ const toggleModal = () => {
 <template>
   <header class="sticky top-0 bg-weather-primary shadow-lg">
     <nav
-      class="mx-auto p-6 flex flex-col xs:flex-row items-center gap-4 text-white max-w-4xl"
+      class="mx-auto p-6 flex flex-col xs:flex-row items-center gap-4 text-white"
     >
       <a href="/" class="flex items-center gap-3">
         <Icon name="material-symbols:partly-cloudy-day" size="2rem" />
