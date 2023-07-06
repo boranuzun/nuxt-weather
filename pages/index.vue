@@ -56,7 +56,7 @@ const fetchGeocodes = async () => {
           <a
             v-for="searchResult in searchResults"
             :key="searchResult.id"
-            :href="`/city/${searchResult.id}`"
+            :href="`/weather/${searchResult.id}`"
           >
             <li
               class="py-2 px-2 cursor-pointer hover:bg-weather-secondary active:text-purple-300 active:ease-in-out active:duration-150"
