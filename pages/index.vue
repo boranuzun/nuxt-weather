@@ -27,17 +27,17 @@ const fetchGeocodes = async () => {
 </script>
 
 <template>
-  <main class="bg-weather-secondary text-white px-72 sm:px-32">
-    <div class="pt-4 mb-8 relative">
+  <main class="rounded bg-opacity-30 text-white">
+    <div class="p-4 my-12 relative">
       <input
         type="text"
         v-model="searchQuery"
         @input="fetchGeocodes"
         placeholder="Search for a city or state"
-        class="py-2 px-1 w-full bg-transparent border-b focus:border-weather-primary focus:outline-none focus:shadow-[0px_1px_0_0_#004E71]"
+        class="py-2 px-1 w-full placeholder-weather-secondary text-weather-primary font-semibold bg-transparent border-b border-gray-400 focus:border-weather-primary focus:outline-none focus:shadow-[0px_1px_0_0_#004E71]"
       />
       <ul
-        class="absolute bg-weather-primary text-white w-full shadow-md py-2 px-1 top-[66px]"
+        class="absolute bg-weather-primary bg-opacity-70 text-white w-full rounded-md shadow-md top-[66px] " 
         v-if="searchResults"
       >
         <p class="py-2" v-if="searchError">
@@ -59,7 +59,7 @@ const fetchGeocodes = async () => {
             :href="`/weather/${searchResult.id}`"
           >
             <li
-              class="py-2 px-2 cursor-pointer hover:bg-weather-secondary active:text-purple-300 active:ease-in-out active:duration-150"
+              class="py-3 px-4 cursor-pointer hover:bg-weather-secondary active:text-purple-300 active:ease-in-out active:duration-150 rounded-md"
             >
               <span v-if="searchResult.admin1">
                 {{ searchResult.name }}, {{ searchResult.admin1 }},

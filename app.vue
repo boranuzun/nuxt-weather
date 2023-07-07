@@ -11,15 +11,15 @@
         />
       </Link>
     </Head>
-    <Body class="bg-weather-secondary">
+    <Body class="bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200">
       <div class="flex flex-col min-h-screen">
         <SiteHeader />
         <main
-          class="mx-auto sm:px-6 lg:px-8 grow items-start w-full"
+          class="mx-auto sm:px-6 lg:px-8 grow items-start w-full max-w-5xl"
         >
           <NuxtPage />
         </main>
-        <!-- <SiteFooter /> -->
+        <SiteFooter />
       </div>
     </Body>
   </Html>

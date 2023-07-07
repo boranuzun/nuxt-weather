@@ -6,13 +6,13 @@ const toggleModal = () => {
 </script>
 
 <template>
-  <header class="sticky top-0 bg-weather-primary shadow-lg">
+  <header class="bg-weather-primary bg-opacity-30 shadow-lg">
     <nav
-      class="mx-auto p-6 flex flex-col xs:flex-row items-center gap-4 text-white"
+      class="max-w-7xl mx-auto p-6 flex flex-row items-center gap-4 text-weather-primary"
     >
       <a href="/" class="flex items-center gap-3">
         <Icon name="material-symbols:partly-cloudy-day" size="2rem" />
-        <p class="text-2xl">Nuxt Weather</p>
+        <p class="text-2xl font-semibold">Nuxt Weather</p>
       </a>
 
       <div class="flex gap-3 flex-1 justify-end">
