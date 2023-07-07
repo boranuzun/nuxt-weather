@@ -167,21 +167,21 @@ fetchGeocodes();
             }}
           </span>
         </span>
-        <div
-          class="items-center justify-end pr-10 gap-2 hidden sm:inline"
-        >
-          <span class="font-semibold">{{ day.humidity }}%</span>
+        <div class="items-center justify-end pr-10 gap-2 hidden sm:inline">
           <Icon
             name="material-symbols:water-drop-outline-rounded"
             size="1.6rem"
+            class="mb-1"
           />
+          <span class="font-semibold">{{ day.humidity }}%</span>
         </div>
         <img
           class="w-[50px] h-[50px] object-cover"
           :src="`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`"
           alt=""
         />
-        <span class="font-semibold text-lg  text-right flex flex-col sm:flex-row sm:gap-1"
+        <span
+          class="font-semibold text-lg text-right flex flex-col sm:flex-row sm:gap-1"
           ><span>{{ Math.round(day.temp.min) }}° </span
           ><span class="hidden sm:inline">/</span>
           <span>{{ Math.round(day.temp.max) }}°</span>
@@ -212,3 +212,5 @@ fetchGeocodes();
     </div>
   </div>
 </template>
+
+<!--Weather widget from https://codepen.io/robstinson/ -->

@@ -4,19 +4,21 @@
       <div
         v-show="modalActive"
         class="absolute w-full bg-black bg-opacity-30 h-screen top-0 left-0 flex justify-center px-8"
+        @click.self="$emit('close-modal')"
       >
         <Transition name="modal-inner">
           <div
             v-if="modalActive"
-            class="p-4 bg-white self-start mt-32 max-w-screen-md rounded"
+            class=" bg-gray-100 p-10 rounded-xl ring-8 ring-gray-300 ring-opacity-40 self-start mt-64 shadow-lg max-h-[29rem] overflow-auto"
+            @click.stop
           >
             <slot />
-            <button
-              class="text-white mt-8 bg-weather-primary py-2 px-6 rounded"
+            <!-- <button
+              class="text-white mt-8 bg-rose-500 py-2 px-6 rounded"
               @click="$emit('close-modal')"
             >
               Close
-            </button>
+            </button> -->
           </div>
         </Transition>
       </div>
