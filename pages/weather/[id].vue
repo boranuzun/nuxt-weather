@@ -1,8 +1,12 @@
 <script setup>
 import moment from "moment";
 
+const config = useRuntimeConfig();
+const owmToken = config.owmToken;
+// console.log("Runtime config: ", owmToken);
+
 const route = useRoute();
-console.log("Route id: ", route.params.id);
+// console.log("Route id: ", route.params.id); 
 
 const cityData = ref(null);
 const latitude = ref(null);
@@ -11,26 +15,36 @@ const name = ref(null);
 const weatherData = ref(null);
 
 const fetchGeocodes = async () => {
-  const { data: geocodes } = await useFetch(
-    `https://geocoding-api.open-meteo.com/v1/get?id=${route.params.id}`
-  );
-  cityData.value = geocodes.value;
-  latitude.value = cityData.value.latitude;
-  longitude.value = cityData.value.longitude;
-  name.value = `${cityData.value.name}, ${cityData.value.admin1}`;
-  console.log("CityData: ", toRaw(cityData.value));
-  console.log("Latitude: ", latitude.value);
-  console.log("Longitude: ", longitude.value);
-  weatherForecast();
+  try {
+    const { data: geocodes } = await useFetch(
+      `https://geocoding-api.open-meteo.com/v1/get?id=${route.params.id}`
+    );
+    cityData.value = geocodes.value;
+    latitude.value = cityData.value.latitude;
+    longitude.value = cityData.value.longitude;
+    name.value = `${cityData.value.name}, ${cityData.value.admin1}`;
+
+    // Debugging
+    // console.log("CityData: ", toRaw(cityData.value));
+    // console.log("Latitude: ", latitude.value);
+    // console.log("Longitude: ", longitude.value);
+    weatherForecast();
+  } catch (error) {
+    console.warn("Error - fetchGeocodes: ", error);
+  }
 };
 
 const weatherForecast = async () => {
-  const { data: forecast } = await useFetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude.value}&lon=${longitude.value}&appid=<API_KEY>&units=metric`
-  );
-  console.log("Forecast: ", forecast);
-  weatherData.value = forecast;
-  console.log("Weather data: ", toRaw(weatherData.value));
+  try {
+    const { data: forecast } = await useFetch(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude.value}&lon=${longitude.value}&appid=<API_KEY>&units=metric`
+    );
+    weatherData.value = forecast;
+    // console.log("Forecast: ", forecast);
+    // console.log("Weather data: ", toRaw(weatherData.value));
+  } catch (error) {
+    console.log("Error - weatherForecast: ", error);
+  }
   return;
 };
 

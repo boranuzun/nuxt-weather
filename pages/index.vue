@@ -15,10 +15,13 @@ const fetchGeocodes = async () => {
       // console.log("Query: ", searchQuery.value);
       // console.log("Geocodes: ", toRaw(geocodes.value?.results));
       searchResults.value = geocodes.value?.results;
-      console.warn("Search results lenght: ", searchResults.value.length);
-      console.log("Search results: ", searchResults.value);
-    } catch {
+
+      // Debugging
+      // console.warn("Search results lenght: ", searchResults.value.length);
+      // console.log("Search results: ", searchResults.value);
+    } catch (error) {
       searchError.value = true;
+      console.warn("Error - fetchGeocodes: ", error);
     }
     return;
   }

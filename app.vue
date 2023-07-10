@@ -11,12 +11,10 @@
         />
       </Link>
     </Head>
-    <Body class="bg-gradient-to-br from-pink-200 via-purple-200 to-indigo-200">
+    <Body class="bg-cover">
       <div class="flex flex-col min-h-screen">
         <SiteHeader />
-        <main
-          class="mx-auto sm:px-6 lg:px-8 grow items-start w-full max-w-5xl"
-        >
+        <main class="mx-auto sm:px-6 lg:px-8 grow items-start w-full max-w-5xl">
           <NuxtPage />
         </main>
         <SiteFooter />
@@ -24,3 +22,10 @@
     </Body>
   </Html>
 </template>
+
+<style>
+body {
+  /** The background image is provided by loading.io */
+  background-image: url("/assets/clouds.svg");
+}
+</style>
