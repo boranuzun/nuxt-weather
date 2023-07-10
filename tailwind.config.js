@@ -11,6 +11,7 @@ module.exports = {
       Roboto: ["Roboto, sans-serif"],
     },
     backgroundImage: {
+      //The background image is provided by loading.io
       'clouds': "url('/assets/clouds.svg')",
     }
   },
