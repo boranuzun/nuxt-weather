@@ -11,7 +11,7 @@
         />
       </Link>
     </Head>
-    <Body class="bg-cover">
+    <Body class="bg-clouds bg-cover">
       <div class="flex flex-col min-h-screen">
         <SiteHeader />
         <main class="mx-auto sm:px-6 lg:px-8 grow items-start w-full max-w-5xl">
@@ -22,10 +22,3 @@
     </Body>
   </Html>
 </template>
-
-<style>
-body {
-  /** The background image is provided by loading.io */
-  background-image: url("/assets/clouds.svg");
-}
-</style>

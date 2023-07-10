@@ -10,5 +10,8 @@ module.exports = {
     fontFamily: {
       Roboto: ["Roboto, sans-serif"],
     },
+    backgroundImage: {
+      'clouds': "url('/assets/clouds.svg')",
+    }
   },
 };
