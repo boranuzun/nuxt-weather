@@ -37,7 +37,7 @@ const fetchGeocodes = async () => {
 const weatherForecast = async () => {
   try {
     const { data: forecast } = await useFetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude.value}&lon=${longitude.value}&appid=<API_KEY>&units=metric`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude.value}&lon=${longitude.value}&appid=7efa332cf48aeb9d2d391a51027f1a71&units=metric`
     );
     weatherData.value = forecast;
     // console.log("Forecast: ", forecast);
